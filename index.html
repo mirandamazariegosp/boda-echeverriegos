@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,8 +47,12 @@
         }
 
         .text-section {
-            opacity: 1;
+            opacity: 0;
             transition: opacity 1s ease-in-out;
+        }
+
+        .text-section:not(.hidden) {
+            opacity: 1;
         }
 
         .text-section.hidden {
@@ -96,43 +102,4 @@
         </div>
         <div class="text-container" id="textContainer">
             <div class="text-section" id="section1">
-                <h1>¡Nos vamos a casar!</h1>
-                <p>29 de noviembre 2025</p>
-                <p>Antigua, Guatemala</p>
-            </div>
-            <!-- Add your new text sections here -->
-            <div class="text-section hidden" id="section2">
-                <p>Calendario:</p>
-                <p>Sabado, 29 de noviembre, 2025</p>
-                <p> 2:00 p.m. Ceremonia </p>
-                <p> 3:00 p.m. Coctel </p>
-                <p> 4:00 p.m. Fiesta </p>
-            </div>
-            <div class="text-section hidden" id="section3">
-                <p>More new text...</p>
-                <p>And another one...</p>
-            </div>
-            <!-- Continue adding more text sections as needed -->
-        </div>
-    </div>
-    <script>
-    const textContainer = document.getElementById('textContainer');
-
-textContainer.addEventListener('scroll', function() {
-    const sections = document.querySelectorAll('.text-section');
-    const scrollPosition = textContainer.scrollTop + textContainer.clientHeight;
-
-    sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionBottom = sectionTop + section.offsetHeight;
-
-        if (scrollPosition > sectionTop && scrollPosition < sectionBottom) {
-            section.classList.remove('hidden');
-        } else {
-            section.classList.add('hidden');
-        }
-    });
-});
-        
-</script>
-</body>
+     
