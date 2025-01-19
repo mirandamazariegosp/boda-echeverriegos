@@ -36,7 +36,7 @@
 
         .text-container {
             flex: 2;
-            text-align: right; /* Align the text to the right */
+            text-align: center; /* Align the text to the center */
             margin-left: 450px; /* Adjust the margin to leave space for the image */
             overflow-y: scroll; /* Allows the text to scroll */
             height: 100vh;
@@ -102,8 +102,11 @@
             </div>
             <!-- Add your new text sections here -->
             <div class="text-section hidden" id="section2">
-                <p>New text that you want to scroll...</p>
-                <p>Another new text entry...</p>
+                <p>Calendario:</p>
+                <p>Sabado, 29 de noviembre, 2025</p>
+                <p> 2:00 p.m. Ceremonia </p>
+                <p> 3:00 p.m. Coctel </p>
+                <p> 4:00 p.m. Fiesta </p>
             </div>
             <div class="text-section hidden" id="section3">
                 <p>More new text...</p>
@@ -113,16 +116,22 @@
         </div>
     </div>
     <script>
-        document.getElementById('textContainer').addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('.text-section');
-            const scrollPosition = this.scrollTop + this.clientHeight;
-            sections.forEach((section, index) => {
-                if (scrollPosition > section.offsetTop + section.clientHeight / 2) {
-                    section.classList.add('hidden');
-                } else {
-                    section.classList.remove('hidden');
-                }
-            });
+    const textContainer = document.getElementById('textContainer');
+    textContainer.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('.text-section');
+        const scrollPosition = textContainer.scrollTop;
+        
+        sections.forEach((section, index) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            const windowHeight = window.innerHeight;
+
+            if (scrollPosition > sectionTop - windowHeight / 2) {
+                section.classList.add('hidden');
+            } else {
+                section.classList.remove('hidden');
+            }
         });
-    </script>
+    });
+</script>
 </body>
