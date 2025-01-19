@@ -119,14 +119,11 @@
     const textContainer = document.getElementById('textContainer');
     textContainer.addEventListener('scroll', function() {
         const sections = document.querySelectorAll('.text-section');
-        const scrollPosition = textContainer.scrollTop;
-        
-        sections.forEach((section, index) => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            const windowHeight = window.innerHeight;
+        const scrollPosition = textContainer.scrollTop + textContainer.clientHeight / 2;
 
-            if (scrollPosition > sectionTop - windowHeight / 2) {
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            if (scrollPosition > sectionTop) {
                 section.classList.add('hidden');
             } else {
                 section.classList.remove('hidden');
