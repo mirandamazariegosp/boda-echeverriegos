@@ -9,15 +9,30 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            text-align: center;
-            color: #ffffff;
-            background-image: url('Black Film Strip Photo Collage Instagram Story.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
             display: flex;
-            flex-direction: column;
+            align-items: center;
             justify-content: center;
+            height: 100vh;
+            background-color: #000;
+            color: #ffffff;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image-container {
+            flex: 1;
+            text-align: left;
+        }
+        .image-container img {
+            width: 300px;
+            height: auto;
+        }
+        .text-container {
+            flex: 2;
+            text-align: left;
+            margin-left: 20px;
         }
         h1 {
             font-size: 3rem;
@@ -32,8 +47,15 @@
     </style>
 </head>
 <body>
-    <h1>¡Nos vamos a casar!</h1>
-    <p>29 de noviembre 2025</p>
-    <p>Antigua, Guatemala</p>
+    <div class="container">
+        <div class="image-container">
+            <img src="Black Film Strip Photo Collage Instagram Story.jpg" alt="Wedding Photo">
+        </div>
+        <div class="text-container">
+            <h1>¡Nos vamos a casar!</h1>
+            <p>29 de noviembre 2025</p>
+            <p>Antigua, Guatemala</p>
+        </div>
+    </div>
 </body>
 </html>
