@@ -51,12 +51,8 @@
             transition: opacity 1s ease-in-out;
         }
 
-        .text-section:not(.hidden) {
+        .text-section.visible {
             opacity: 1;
-        }
-
-        .text-section.hidden {
-            opacity: 0;
         }
 
         h1 {
@@ -101,5 +97,50 @@
             <img src="Black Film Strip Photo Collage Instagram Story (1).jpg" alt="Wedding Photo">
         </div>
         <div class="text-container" id="textContainer">
-            <div class="text-section" id="section1">
-     
+            <div class="text-section visible" id="section1">
+                <h1>¡Nos vamos a casar!</h1>
+                <p>29 de noviembre 2025</p>
+                <p>Antigua, Guatemala</p>
+            </div>
+            <div class="text-section" id="section2">
+                <p>Calendario:</p>
+                <p>Sabado, 29 de noviembre, 2025</p>
+                <p> 2:00 p.m. Ceremonia </p>
+                <p> 3:00 p.m. Coctel </p>
+                <p> 4:00 p.m. Fiesta </p>
+            </div>
+            <div class="text-section" id="section3">
+                <p>More new text...</p>
+                <p>And another one...</p>
+            </div>
+            <!-- Add more sections as needed -->
+        </div>
+    </div>
+
+    <script>
+        const textContainer = document.getElementById('textContainer');
+
+        // Function to check which sections are in view
+        function checkSections() {
+            const sections = document.querySelectorAll('.text-section');
+            const scrollPosition = textContainer.scrollTop + window.innerHeight / 2; // Middle of the viewport
+
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                const sectionBottom = sectionTop + section.offsetHeight;
+
+                // If the section is in view, add 'visible' class
+                if (scrollPosition > sectionTop && scrollPosition < sectionBottom) {
+                    section.classList.add('visible');
+                } else {
+                    section.classList.remove('visible');
+                }
+            });
+        }
+
+        // Run the function when the page loads and on every scroll
+        window.addEventListener('load', checkSections);
+        textContainer.addEventListener('scroll', checkSections);
+    </script>
+</body>
+</html>
