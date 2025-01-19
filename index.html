@@ -5,19 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boda Echeverria Mazariegos</title>
     <style>
-        /* Import Sofia Pro font */
-        @font-face {
-            font-family: 'Sofia Pro';
-            src: url('path/to/sofia-pro-regular.woff2') format('woff2'),
-                 url('path/to/sofia-pro-regular.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Sofia Pro', Arial, sans-serif; /* Use Sofia Pro */
+            font-family: Arial, sans-serif;
             height: 100vh;
             background-color: #000;
             color: #ffffff;
@@ -47,12 +38,12 @@
 
         .text-container {
             flex: 2;
-            text-align: left; /* Align text to the left */
+            text-align: left; /* Align the text to the left */
             margin-left: 450px; /* Adjust the margin to leave space for the image */
+            overflow-y: hidden; /* Hides the text that is not visible */
             height: 100vh;
             padding: 20px;
             position: relative;
-            overflow: hidden; /* Hide text when it's not visible */
         }
 
         .text-section {
@@ -66,14 +57,14 @@
         }
 
         h1 {
-            font-size: 4rem; /* Original font size */
+            font-size: 4rem; /* Larger font size */
             margin: 0;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
 
         p {
-            font-size: 2rem; /* Original font size */
-            margin: 0.5rem 0; /* Original margin */
+            font-size: 2rem; /* Larger font size */
+            margin: 0.5rem 0;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
         }
 
@@ -120,8 +111,8 @@
                 <p> 4:00 p.m. Fiesta </p>
             </div>
             <div class="text-section" id="section3">
-                <p>Regalos</p>
-                <p>Aqui un link.</p>
+                <p>More new text...</p>
+                <p>And another one...</p>
             </div>
         </div>
     </div>
