@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boda Echeverria Mazariegos</title>
-        <link href="https://fonts.googleapis.com/css2?family=Sofia+Pro:wght@400;700&display=swap" rel="stylesheet">
-
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: Sofia Pro, sans-serif;
+            font-family: Arial, sans-serif;
             height: 100vh;
             background-color: #000;
             color: #ffffff;
@@ -42,10 +40,10 @@
             flex: 2;
             text-align: left; /* Align text to the left */
             margin-left: 450px; /* Adjust the margin to leave space for the image */
-            overflow-y: scroll; /* Allows the text to scroll */
             height: 100vh;
             padding: 20px;
             position: relative;
+            overflow: hidden; /* Hide text when it's not visible */
         }
 
         .text-section {
@@ -116,14 +114,12 @@
                 <p>More new text...</p>
                 <p>And another one...</p>
             </div>
-            <!-- Add more sections as needed -->
         </div>
     </div>
 
     <script>
         const textContainer = document.getElementById('textContainer');
 
-        // Function to check which sections are in view
         function checkSections() {
             const sections = document.querySelectorAll('.text-section');
             const scrollPosition = textContainer.scrollTop + window.innerHeight / 2; // Middle of the viewport
@@ -144,7 +140,7 @@
         // Run the function when the page loads and on every scroll
         window.addEventListener('load', checkSections);
         textContainer.addEventListener('scroll', checkSections);
-        
+
         // Ensure the first section stays visible after page load
         window.addEventListener('load', function() {
             document.getElementById('section1').classList.add('visible');
