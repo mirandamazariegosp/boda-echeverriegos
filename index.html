@@ -36,7 +36,7 @@
 
         .text-container {
             flex: 2;
-            text-align: center; /* Align the text to the center */
+            text-align: right; /* Align the text to the right */
             margin-left: 450px; /* Adjust the margin to leave space for the image */
             overflow-y: scroll; /* Allows the text to scroll */
             height: 100vh;
@@ -115,9 +115,9 @@
     <script>
         document.getElementById('textContainer').addEventListener('scroll', function() {
             const sections = document.querySelectorAll('.text-section');
-            const scrollPosition = this.scrollTop;
+            const scrollPosition = this.scrollTop + this.clientHeight;
             sections.forEach((section, index) => {
-                if (scrollPosition > index * window.innerHeight / 2) {
+                if (scrollPosition > section.offsetTop + section.clientHeight / 2) {
                     section.classList.add('hidden');
                 } else {
                     section.classList.remove('hidden');
