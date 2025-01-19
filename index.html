@@ -10,7 +10,6 @@
             height: 100vh;
             background-color: #000;
             color: #ffffff;
-            overflow: hidden; /* Prevents the body from scrolling */
         }
 
         .container {
@@ -37,11 +36,21 @@
 
         .text-container {
             flex: 2;
-            text-align: right; /* Align the text to the right */
-            margin-left: 350px; /* Adjust the margin to leave space for the image */
+            text-align: center; /* Align the text to the center */
+            margin-left: 450px; /* Adjust the margin to leave space for the image */
             overflow-y: scroll; /* Allows the text to scroll */
             height: 100vh;
             padding: 20px;
+            position: relative;
+        }
+
+        .text-section {
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .text-section.hidden {
+            opacity: 0;
         }
 
         h1 {
@@ -85,14 +94,35 @@
         <div class="image-container">
             <img src="Black Film Strip Photo Collage Instagram Story (1).jpg" alt="Wedding Photo">
         </div>
-        <div class="text-container">
-            <h1>¡Nos vamos a casar!</h1>
-            <p>29 de noviembre 2025</p>
-            <p>Antigua, Guatemala</p>
-            <!-- Add your new text here -->
-            <p>New text that you want to scroll...</p>
-            <p>Another new text entry...</p>
-            <!-- Continue adding more text as needed -->
+        <div class="text-container" id="textContainer">
+            <div class="text-section" id="section1">
+                <h1>¡Nos vamos a casar!</h1>
+                <p>29 de noviembre 2025</p>
+                <p>Antigua, Guatemala</p>
+            </div>
+            <!-- Add your new text sections here -->
+            <div class="text-section hidden" id="section2">
+                <p>New text that you want to scroll...</p>
+                <p>Another new text entry...</p>
+            </div>
+            <div class="text-section hidden" id="section3">
+                <p>More new text...</p>
+                <p>And another one...</p>
+            </div>
+            <!-- Continue adding more text sections as needed -->
         </div>
     </div>
+    <script>
+        document.getElementById('textContainer').addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.text-section');
+            const scrollPosition = this.scrollTop;
+            sections.forEach((section, index) => {
+                if (scrollPosition > index * window.innerHeight / 2) {
+                    section.classList.add('hidden');
+                } else {
+                    section.classList.remove('hidden');
+                }
+            });
+        });
+    </script>
 </body>
