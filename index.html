@@ -110,8 +110,8 @@
                 <p> 4:00 p.m. Fiesta </p>
             </div>
             <div class="text-section" id="section3">
-                <p>More new text...</p>
-                <p>And another one...</p>
+                <p>Regalos</p>
+                <p>gracias</p>
             </div>
             <!-- Add more sections as needed -->
         </div>
@@ -141,6 +141,11 @@
         // Run the function when the page loads and on every scroll
         window.addEventListener('load', checkSections);
         textContainer.addEventListener('scroll', checkSections);
+        
+        // Ensure the first section stays visible after page load
+        window.addEventListener('load', function() {
+            document.getElementById('section1').classList.add('visible');
+        });
     </script>
 </body>
 </html>
