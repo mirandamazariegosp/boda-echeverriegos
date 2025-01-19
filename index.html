@@ -4,14 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boda Echeverria Mazariegos</title>
-
-        <link href="https://fonts.googleapis.com/css2?family=Sofia+Pro:wght@400;700&display=swap" rel="stylesheet">
-
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: Sofia Pro, sans-serif;
+            font-family: Arial, sans-serif;
             height: 100vh;
             background-color: #000;
             color: #ffffff;
@@ -41,7 +38,7 @@
 
         .text-container {
             flex: 2;
-            text-align: center; /* Align the text to the center */
+            text-align: left; /* Align text to the left */
             margin-left: 450px; /* Adjust the margin to leave space for the image */
             overflow-y: scroll; /* Allows the text to scroll */
             height: 100vh;
@@ -52,12 +49,7 @@
         .text-section {
             opacity: 0;
             transition: opacity 1s ease-in-out;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-            margin: 0;
+            margin-top: 20px;
         }
 
         .text-section.visible {
@@ -65,14 +57,14 @@
         }
 
         h1 {
-            font-size: 4rem; /* Increase the font size */
+            font-size: 4rem; /* Original font size */
             margin: 0;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
 
         p {
-            font-size: 2rem; /* Increase the font size */
-            margin: 0.5rem 0;
+            font-size: 2rem; /* Original font size */
+            margin: 0.5rem 0; /* Original margin */
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
         }
 
@@ -119,8 +111,8 @@
                 <p> 4:00 p.m. Fiesta </p>
             </div>
             <div class="text-section" id="section3">
-                <p>Regalos</p>
-                <p>Aqui un link de regalos</p>
+                <p>More new text...</p>
+                <p>And another one...</p>
             </div>
             <!-- Add more sections as needed -->
         </div>
