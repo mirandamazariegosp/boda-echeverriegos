@@ -11,7 +11,7 @@
             padding: 0;
             font-family: 'Poppins', sans-serif;
             height: 100vh;
-            background-color: #000;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
             color: #ffffff;
         }
 
@@ -49,7 +49,8 @@
 
         .text-section {
             opacity: 0;
-            transition: opacity 1s ease-in-out;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -62,16 +63,19 @@
         }
 
         h1 {
-            font-size: 4rem; /* Increase the font size */
-            margin: 0;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-        }
+    font-size: 4rem; /* Keeps the heading large and modern */
+    margin: 0 0 1rem 0; /* Adds spacing below the heading */
+    letter-spacing: 0.05em; /* Adds a slight modern spacing between letters */
+    line-height: 1.2; /* Ensures lines in multi-line headings are spaced well */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Keeps the styling intact */
+}
 
-
-        p {
-    font-size: 2rem; /* Adjust the font size if needed */
-    margin: 1rem 0; /* Add spacing between each paragraph */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Optional shadow for style */
+       p {
+    font-size: 2rem; /* Keeps paragraphs readable but elegant */
+    margin: 1rem 0; /* Ensures spacing above and below each paragraph */
+    letter-spacing: 0.03em; /* Subtle spacing between letters */
+    line-height: 1.6; /* Adjusts the space between lines in multi-line paragraphs */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Keeps styling consistent */
 }
 
 
